@@ -7,67 +7,69 @@
 //
 
 class Calculator {
-    var arguments = [Int]()
-    var operators = [Int]()
+    static var arguments = [Int]()
+    static var operators = [Int]()
 
     func save(numbers: String, mod: Int) -> String {
         var num = Int(numbers)
-        arguments.append(num!)
-        opPreority(of: mod, to: &operators, result: &num!)
-        for i in arguments {
-            print(i);
-        }
+        Calculator.arguments.append(num!)
+        opPreority(of: mod, to: &Calculator.operators, result: &num!, arguments: &Calculator.arguments)
+        giveResult(result: &num!, arguments: &Calculator.arguments, operators: &Calculator.operators)
+        if (Calculator.operators.count == 0) {Calculator.operators.append(mod)}
         return String(num!)
     }
-    func saveLastOp (_ op: Int) {
-        operators.removeLast()
-        operators.append(op)
+    
+    func opPreority (of op: Int, to prevOp: inout [Int], result: inout Int, arguments: inout [Int]) {
+        if (prevOp.count == 0) {
+            prevOp.append(op)
+        } else {
+            switch op {
+            case 17:
+                performCalculations(operator: prevOp.removeLast(), result: &result, arguments: &arguments)
+                giveResult(result: &result, arguments: &arguments, operators: &prevOp)
+            case 13:
+                performCalculations(operator: prevOp.removeLast(), result: &result, arguments: &arguments)
+            case 14:
+                performCalculations(operator: prevOp.removeLast(), result: &result, arguments: &arguments)
+            case 15 where prevOp.last! != 15 && prevOp.last! != 16,
+                 16 where prevOp.last! != 15 && prevOp.last! != 16:
+                prevOp.append(op)
+            case 15, 16:
+                performCalculations(operator: prevOp.removeLast(), result: &result, arguments: &arguments)
+            default:
+                break
+            }
+        }
     }
-    func opPreority (of op: Int, to prevOp: inout [Int], result: inout Int) {
+    
+    func performCalculations(operator op: Int, result: inout Int, arguments: inout [Int]) {
         switch op {
-        case 17:
-            if prevOp.count != 0 {performCalculations(operator: prevOp.removeLast(), result: &result)}
-        case 13 where prevOp.count > 1:
-            performCalculations(operator: prevOp.removeLast(), result: &result)
-            opPreority(of: op, to: &prevOp, result: &result)
         case 13:
-            if arguments.count >= 2 {performCalculations(operator: op, result: &result)} else {prevOp.append(op)}
-        case 14 where prevOp.count > 1:
-            performCalculations(operator: prevOp.removeLast(), result: &result)
-            opPreority(of: op, to: &prevOp, result: &result)
+            result = operate({$1 + $0}, arguments: &arguments)
         case 14:
-            if arguments.count >= 2 {performCalculations(operator: op, result: &result)} else {prevOp.append(op)}
-        case 15 where (prevOp.last == 15 || prevOp.last == 16):
-            performCalculations(operator: prevOp.removeLast(), result: &result)
-            opPreority(of: op, to: &prevOp, result: &result)
+            result = operate({$1 - $0}, arguments: &arguments)
         case 15:
-            if arguments.count >= 2 {performCalculations(operator: op, result: &result)} else {prevOp.append(op)}
-        case 16 where (prevOp.last == 15 || prevOp.last == 16):
-            performCalculations(operator: prevOp.removeLast(), result: &result)
-            opPreority(of: op, to: &prevOp, result: &result)
+            result = operate({$1 * $0}, arguments: &arguments)
         case 16:
-            if arguments.count > 2 {performCalculations(operator: op, result: &result)} else {prevOp.append(op)}
+            result = operate({if $0 == 0 || $1 == 0 {
+                return 0
+            }else{
+                return $1 / $0}
+            }, arguments: &arguments)
         default:
             break
         }
     }
-    func performCalculations(operator op: Int, result: inout Int)
-    {
-        switch op {
-        case 13:
-            result = operate{$1 + $0}
-        case 14:
-            result = operate{$1 - $0}
-        case 15:
-            result = operate{$1 * $0}
-        case 16:
-            result = operate{$1 / $0}
-        default:
-            break
-        }
-    }
-    func operate (_ op :(Int, Int) -> Int) -> Int {
+    
+    func operate (_ op :(Int, Int) -> Int, arguments: inout [Int]) -> Int {
         let num = op(arguments.remove(at: arguments.endIndex - 1), arguments.removeLast())
+        arguments.append(num)
         return num
+    }
+    
+    func giveResult(result: inout Int, arguments: inout [Int], operators: inout [Int]){
+        if (arguments.count == 2 && operators.count == 1) {
+            performCalculations(operator: operators.removeLast(), result: &result, arguments: &arguments)
+        }
     }
 }

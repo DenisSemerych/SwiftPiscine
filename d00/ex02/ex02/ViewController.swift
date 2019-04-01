@@ -38,8 +38,8 @@ class ViewController: UIViewController {
             print("Pressed AC button - all arguments is deleted\n")
             typing = false
             numberLine.text! = "0"
-            calc.arguments = []
-            calc.operators = []
+            Calculator.arguments = []
+            Calculator.operators = []
         case 12:
             print("Negative sign button is pressed")
             if (numberLine.text![numberLine.text!.startIndex] != "-") {
@@ -50,27 +50,22 @@ class ViewController: UIViewController {
         case 13:
             print("+ is pressed")
             numberLine.text! = calc.save(numbers: numberLine.text!, mod: 13)
-//            numberLine.text! = "0"
             typing = false
         case 14:
             print("- is pressed")
             numberLine.text! = calc.save(numbers: numberLine.text!, mod: 14)
-//            numberLine.text! = "0"
             typing = false
         case 15:
             print("* is pressed")
             numberLine.text! =  calc.save(numbers: numberLine.text!, mod: 15)
-//            numberLine.text! = "0"
             typing = false
         case 16:
             print("\\ is pressed")
             numberLine.text! = calc.save(numbers: numberLine.text!, mod: 16)
-//            numberLine.text! = "0"
             typing = false
         case 17:
             print("= is pressed")
             numberLine.text! = calc.save(numbers: numberLine.text!, mod: 17)
-//            numberLine.text! = "0"
             typing = false
         default:
             break
