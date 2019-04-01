@@ -12,11 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = nil
     }
+    
+    @IBOutlet weak var label: UILabel!
     
     
     @IBAction func printMsgToConsole(_ sender: UIButton) {
-        print("Hello World!")
+        label.text = "Hello World!"
     }
     
 }
