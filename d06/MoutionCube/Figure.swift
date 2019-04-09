@@ -27,25 +27,54 @@ class Figure: UIView, UIGestureRecognizerDelegate {
     }
     
     @objc func handlePan(recognizer: UIPanGestureRecognizer) {
-       // delegate?.gravity.removeItem(self)
+        switch recognizer.state {
+        case .began:
+            delegate?.gravity.removeItem(self)
+            print("began")
+        case .ended:
+            delegate?.gravity.addItem(self)
+            print("end")
+        default:
+            break
+        }
         let translation = recognizer.translation(in: self.superview)
         guard let view = recognizer.view else {return}
         view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
         recognizer.setTranslation(CGPoint.zero, in: self.superview)
-        //delegate?.gravity.addItem(self)
+
     }
     
     @objc func handlePinch(recognizer: UIPinchGestureRecognizer) {
-        //delegate?.gravity.removeItem(self)
+        switch recognizer.state {
+        case .began:
+            delegate?.gravity.removeItem(self)
+        case .ended:
+            delegate?.gravity.addItem(self)
+        default:
+            break
+        }
         guard let view = recognizer.view else {return}
         view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
-       // delegate?.gravity.addItem(self)
     }
     
     @objc func handleRotation(recognizer: UIRotationGestureRecognizer) {
-        guard let view = recognizer.view else {return}
-        view.transform = view.transform.rotated(by: recognizer.rotation)
-        recognizer.rotation = 0
+        switch recognizer.state {
+        case .began:
+            delegate?.gravity.removeItem(self)
+            guard let view = recognizer.view else {return}
+            view.transform = view.transform.rotated(by: recognizer.rotation)
+            recognizer.rotation = 0
+        case .ended:
+            guard let view = recognizer.view else {return}
+            view.transform = view.transform.rotated(by: recognizer.rotation)
+            recognizer.rotation = 0
+            delegate?.gravity.addItem(self)
+        default:
+            guard let view = recognizer.view else {return}
+            view.transform = view.transform.rotated(by: recognizer.rotation)
+            recognizer.rotation = 0
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
