@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'dsemeryc2019_Example' do
+  pod 'dsemeryc2019', :path => '../'
+
+  target 'dsemeryc2019_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

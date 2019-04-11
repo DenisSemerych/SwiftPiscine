@@ -1,0 +1,16 @@
+PODS:
+  - dsemeryc2019 (0.1.0)
+
+DEPENDENCIES:
+  - dsemeryc2019 (from `../`)
+
+EXTERNAL SOURCES:
+  dsemeryc2019:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  dsemeryc2019: 3a1b527fe96006544dc98dddeb10c85fd4a08198
+
+PODFILE CHECKSUM: 74c2fbe366d1a84b621306596c750bb0d1fb40b0
+
+COCOAPODS: 1.6.1
