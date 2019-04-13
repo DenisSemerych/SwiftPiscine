@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "CoreDataSwiftPiscinePod",
   "description": "This pod is created as part of Swift Piscine School42(d08). It is about using CoreData.Unit Factory (Kiev) 2019'",
-  "homepage": "https://github.com/denis_semerych@icloud.com/dsemeryc2019",
+  "homepage": "https://github.com/denis_semerych@icloud.com/",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "dsemeryc2019/Classes/**/*",
+  "source_files": "dsemeryc2019/Classes/**/*.swift",
   "swift_version": "4.0",
   "frameworks": [
     "UIKit",

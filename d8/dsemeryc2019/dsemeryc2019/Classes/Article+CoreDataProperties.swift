@@ -23,7 +23,7 @@ extension Article {
     @NSManaged public var modificationDate: NSDate?
     @NSManaged public var title: String?
     
-    override public var description {
+    override public var description: String {
         get {
             guard let title = title, let creationDate = creationDate else {return "No info about object"}
             return ("Article: \(title) created on \(creationDate)")

@@ -2,15 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../dsemeryc2019/Classes/Article+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../dsemeryc2019/Classes/ArticleManager.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../dsemeryc2019/Classes/Article+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:dsemeryc2019.xcodeproj">
    </FileRef>
    <FileRef

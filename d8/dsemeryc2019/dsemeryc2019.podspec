@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
   This pod is created as part of Swift Piscine School42(d08). It is about using CoreData.Unit Factory (Kiev) 2019'
  					 DESC
-  s.homepage         = 'https://github.com/denis_semerych@icloud.com/dsemeryc2019'
+  s.homepage         = 'https://github.com/denis_semerych@icloud.com/'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'dsemeryc' => 'denis_semerych@icloud.com' }
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'dsemeryc2019/Classes/**/*'
+  s.source_files = 'dsemeryc2019/Classes/**/*.swift'
   s.swift_version = '4.0' 
   # spec.resource_bundles = {
   #   'dsemeryc2019' => ['dsemeryc2019/Assets/*.png']

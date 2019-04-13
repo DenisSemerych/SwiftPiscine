@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		265401FBC1BA6E99182D2638641246BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDFAD6DEC36E849FB16E19BBB883887 /* MapKit.framework */; };
+		016B381BDD61832B51D47C57DBB1D49E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED86B12EBDCDF45EB45E1B415C3FB73 /* CoreData.framework */; };
+		0929D830F30EF09EC315E68121FD0920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C3AA4211197C1E9EF4B21CD10CBECB /* UIKit.framework */; };
+		15C7015AE3DD5C687CCFA40972073132 /* dsemeryc2019-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EEF2274D615F6EEF1C23A4BB1FC9E99 /* dsemeryc2019-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B3ADFC678B0147B88CF34477327EB3A /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690D4A35DD6A84F44C9F71296ADAE6D1 /* ArticleManager.swift */; };
+		2DE6643202DF21DB4699411BBCBB89C0 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED401B853D014893022EAA428F394DB9 /* Article+CoreDataClass.swift */; };
 		2DE8A97E6A442983004CEBD5496FD106 /* Pods-dsemeryc2019_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 828849BE3B11B655333120BAB493E2E9 /* Pods-dsemeryc2019_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42CA6F751E32DFD3DA6D818AA1D6ABC5 /* article.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400C53CBECBDD32DDF9B27DF51375FCC /* article.xcdatamodeld */; };
 		67864170E045B43FBB6DA6478107081F /* Pods-dsemeryc2019_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D22ABE5219D59439BF4D549164FB0A44 /* Pods-dsemeryc2019_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79FAFBC181834EC722A973146058620C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C3AA4211197C1E9EF4B21CD10CBECB /* UIKit.framework */; };
-		8187BCD7C675049D2DB5F8A10FF9940B /* dsemeryc2019-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2ACEE1E788C422647B0C7B48E65298E /* dsemeryc2019-dummy.m */; };
-		9265FA93D3DFB3C3F2830E917D71F353 /* dsemeryc2019-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD2572269AA82DD46CD37AB2EB323408 /* dsemeryc2019-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		982772DB817A687409157E7A410945E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267854BAEC5BC62FA8D657A2860F2B2F /* Foundation.framework */; };
-		A416F6CE1D0EB1C427DC551752367690 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267854BAEC5BC62FA8D657A2860F2B2F /* Foundation.framework */; };
+		A257C4D17F62EC1D63C9D20445AE0007 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9C58B0F07FE61F7DC808360244BC3 /* Article+CoreDataProperties.swift */; };
+		A6A8829C732C8AAADEC5815432F6C1A7 /* dsemeryc2019-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7FE5D2AF94C2FA068034143C3E549 /* dsemeryc2019-dummy.m */; };
 		A9C26D76171687CB233A0DC1C81FC647 /* Pods-dsemeryc2019_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EFF06D8E5B0AECD1A173E4E8129C1B /* Pods-dsemeryc2019_Tests-dummy.m */; };
+		BE097DDE18F6D41497EFB84216681A1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267854BAEC5BC62FA8D657A2860F2B2F /* Foundation.framework */; };
+		C1B7220A40625F301306C67260577F99 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDFAD6DEC36E849FB16E19BBB883887 /* MapKit.framework */; };
 		CBFFAD4475E98FA7CCC7B313A743DDC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267854BAEC5BC62FA8D657A2860F2B2F /* Foundation.framework */; };
-		DF4173F63B4E35B62340AD62736B054D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED86B12EBDCDF45EB45E1B415C3FB73 /* CoreData.framework */; };
 		E66223D46300B1C17BEF1BEA36E740AA /* Pods-dsemeryc2019_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A51575A22E42ABFCEDF5178C6C9DDB33 /* Pods-dsemeryc2019_Example-dummy.m */; };
-		F0D3051378CF4E9F573AA74EE63050ED /* article.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6030E42D50A0D1CBB65F875442B5F172 /* article.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,58 +37,61 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 269E773118DC584E2225232E5186BC07;
+			remoteGlobalIDString = 2FB83C087DB3E9CADE3A052D35AE35E0;
 			remoteInfo = dsemeryc2019;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03C71ECA74106652428B70A2615BB3D6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		0A57B6A62D4C1D045AADEF1233B143D7 /* article.xcdatamodel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcdatamodel; path = article.xcdatamodel; sourceTree = "<group>"; };
+		17F7FE5D2AF94C2FA068034143C3E549 /* dsemeryc2019-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "dsemeryc2019-dummy.m"; sourceTree = "<group>"; };
 		1A3B3F148985121CA149B67D6778D9A7 /* Pods-dsemeryc2019_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-dsemeryc2019_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1BA71D0BFB5F8F1CF46CE93A332560C9 /* Pods-dsemeryc2019_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-dsemeryc2019_Tests.modulemap"; sourceTree = "<group>"; };
 		1CDFAD6DEC36E849FB16E19BBB883887 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		20E77B8CAADD895A0B9DE001191CC15A /* Pods-dsemeryc2019_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dsemeryc2019_Tests-Info.plist"; sourceTree = "<group>"; };
 		267854BAEC5BC62FA8D657A2860F2B2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		26FD292E0FB1EAE1458C497A7DE4BCEF /* Pods_dsemeryc2019_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dsemeryc2019_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FD292E0FB1EAE1458C497A7DE4BCEF /* Pods_dsemeryc2019_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_dsemeryc2019_Tests.framework; path = "Pods-dsemeryc2019_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD1B500033971F6A93075EB94E3F7E8 /* Pods-dsemeryc2019_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dsemeryc2019_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5C2D92F419D46DBFF940B3707F5BEAC5 /* dsemeryc2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = dsemeryc2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D5AC39CD054E06981A2125D5B6C41ED /* Pods_dsemeryc2019_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dsemeryc2019_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68518FBA412BE4A729E551B2619DE78F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7EDA36F6207DB643868A81803702B190 /* dsemeryc2019.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsemeryc2019.xcconfig; sourceTree = "<group>"; };
+		484D828D5AC26D9C13482DED1A960FF3 /* dsemeryc2019-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsemeryc2019-prefix.pch"; sourceTree = "<group>"; };
+		56C9558D68E2020A9D39DF94515DC9A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		58C02E889A9104F8E04953FB2F60F5F5 /* dsemeryc2019.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = dsemeryc2019.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5C2D92F419D46DBFF940B3707F5BEAC5 /* dsemeryc2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dsemeryc2019.framework; path = dsemeryc2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5AC39CD054E06981A2125D5B6C41ED /* Pods_dsemeryc2019_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_dsemeryc2019_Example.framework; path = "Pods-dsemeryc2019_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EEF2274D615F6EEF1C23A4BB1FC9E99 /* dsemeryc2019-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsemeryc2019-umbrella.h"; sourceTree = "<group>"; };
+		690D4A35DD6A84F44C9F71296ADAE6D1 /* ArticleManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArticleManager.swift; path = dsemeryc2019/Classes/ArticleManager.swift; sourceTree = "<group>"; };
 		828849BE3B11B655333120BAB493E2E9 /* Pods-dsemeryc2019_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-dsemeryc2019_Tests-umbrella.h"; sourceTree = "<group>"; };
 		8B2F2BC917A78923C57A0E2A6AFB360D /* Pods-dsemeryc2019_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-dsemeryc2019_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8DC1B4022FAB7C8A92A4752841DDA95B /* dsemeryc2019.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = dsemeryc2019.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		91C3AA4211197C1E9EF4B21CD10CBECB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		94A9F4D39A3A3BA8184A885E681778AD /* dsemeryc2019.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = dsemeryc2019.modulemap; sourceTree = "<group>"; };
+		94DC23ADFD5EAAB44232BF0DB926A7A8 /* dsemeryc2019.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsemeryc2019.xcconfig; sourceTree = "<group>"; };
 		9D62A147DF8CD2340106CF460D131349 /* Pods-dsemeryc2019_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dsemeryc2019_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F7E124D664AFBFFD754537463CCC706 /* dsemeryc2019-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsemeryc2019-prefix.pch"; sourceTree = "<group>"; };
-		A1C5C395B02345A3E367FF6028D98350 /* dsemeryc2019-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "dsemeryc2019-Info.plist"; sourceTree = "<group>"; };
-		A2ACEE1E788C422647B0C7B48E65298E /* dsemeryc2019-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "dsemeryc2019-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A51575A22E42ABFCEDF5178C6C9DDB33 /* Pods-dsemeryc2019_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dsemeryc2019_Example-dummy.m"; sourceTree = "<group>"; };
 		A88E1B8B7B0B102D88EDD0DE8F7B46F3 /* Pods-dsemeryc2019_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dsemeryc2019_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AED258483222139ECC01157E8848D2D8 /* Pods-dsemeryc2019_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-dsemeryc2019_Example.modulemap"; sourceTree = "<group>"; };
 		AED86B12EBDCDF45EB45E1B415C3FB73 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		B089C994BC29F29C29E72FA463178A4E /* dsemeryc2019.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = dsemeryc2019.modulemap; sourceTree = "<group>"; };
 		B2EFF06D8E5B0AECD1A173E4E8129C1B /* Pods-dsemeryc2019_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dsemeryc2019_Tests-dummy.m"; sourceTree = "<group>"; };
 		C441528BFAFEEF6ED264A8927AFD5A44 /* Pods-dsemeryc2019_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dsemeryc2019_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C685D2452DC1E26868564A18DA45F606 /* dsemeryc2019-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "dsemeryc2019-Info.plist"; sourceTree = "<group>"; };
+		CEF9C58B0F07FE61F7DC808360244BC3 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "dsemeryc2019/Classes/Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D22ABE5219D59439BF4D549164FB0A44 /* Pods-dsemeryc2019_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-dsemeryc2019_Example-umbrella.h"; sourceTree = "<group>"; };
 		DEE57E798E56103B8D5736A6EF684D85 /* Pods-dsemeryc2019_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dsemeryc2019_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E1BA989ABB94D5C93D7AEE707DD28613 /* Pods-dsemeryc2019_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dsemeryc2019_Example-Info.plist"; sourceTree = "<group>"; };
+		E7CD56BFA1BEEB2ED227F8E7CCBBC713 /* article.xcdatamodel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcdatamodel; path = article.xcdatamodel; sourceTree = "<group>"; };
 		E9ACEC63687CB4D90E1937C103D783E9 /* Pods-dsemeryc2019_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-dsemeryc2019_Example-frameworks.sh"; sourceTree = "<group>"; };
+		ED401B853D014893022EAA428F394DB9 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataClass.swift"; path = "dsemeryc2019/Classes/Article+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F49B7BEBE9078B79EE3270798BA645A0 /* Pods-dsemeryc2019_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dsemeryc2019_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FD2572269AA82DD46CD37AB2EB323408 /* dsemeryc2019-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsemeryc2019-umbrella.h"; sourceTree = "<group>"; };
+		FA1971936BF4EE4373196F6547A7E1D8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B37EFE0729A357197C9FD7E287048B5 /* Frameworks */ = {
+		08F740FBF3758DFCED5D9A544D64E116 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF4173F63B4E35B62340AD62736B054D /* CoreData.framework in Frameworks */,
-				A416F6CE1D0EB1C427DC551752367690 /* Foundation.framework in Frameworks */,
-				265401FBC1BA6E99182D2638641246BD /* MapKit.framework in Frameworks */,
-				79FAFBC181834EC722A973146058620C /* UIKit.framework in Frameworks */,
+				016B381BDD61832B51D47C57DBB1D49E /* CoreData.framework in Frameworks */,
+				BE097DDE18F6D41497EFB84216681A1A /* Foundation.framework in Frameworks */,
+				C1B7220A40625F301306C67260577F99 /* MapKit.framework in Frameworks */,
+				0929D830F30EF09EC315E68121FD0920 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,20 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		142C6FAF6F69D652F9939FD226F55481 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				94A9F4D39A3A3BA8184A885E681778AD /* dsemeryc2019.modulemap */,
-				7EDA36F6207DB643868A81803702B190 /* dsemeryc2019.xcconfig */,
-				A2ACEE1E788C422647B0C7B48E65298E /* dsemeryc2019-dummy.m */,
-				A1C5C395B02345A3E367FF6028D98350 /* dsemeryc2019-Info.plist */,
-				9F7E124D664AFBFFD754537463CCC706 /* dsemeryc2019-prefix.pch */,
-				FD2572269AA82DD46CD37AB2EB323408 /* dsemeryc2019-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/dsemeryc2019";
-			sourceTree = "<group>";
-		};
 		2C85EF5A862FD5BE2F30AD24307FFAAA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,33 +167,50 @@
 			path = "Target Support Files/Pods-dsemeryc2019_Tests";
 			sourceTree = "<group>";
 		};
-		804853B728A2CCC7ED1ADF265CB2BA66 /* dsemeryc2019 */ = {
+		6F7BE8AEEE3ECA23048CB1E39D9ECDBC /* dsemeryc2019 */ = {
 			isa = PBXGroup;
 			children = (
-				A8D4FB50371CAE56A275A313EA5FAB04 /* Pod */,
-				EEA31D79F4C7904BE391F889655B691E /* Resources */,
-				142C6FAF6F69D652F9939FD226F55481 /* Support Files */,
+				ED401B853D014893022EAA428F394DB9 /* Article+CoreDataClass.swift */,
+				CEF9C58B0F07FE61F7DC808360244BC3 /* Article+CoreDataProperties.swift */,
+				690D4A35DD6A84F44C9F71296ADAE6D1 /* ArticleManager.swift */,
+				810C1B0FCD1628637AB113630B6BAB5C /* Pod */,
+				E2333CC014FC27DA15E44C0FDAF20A1E /* Resources */,
+				A449610ED6C44FCD4DDE3ADD9009130E /* Support Files */,
 			);
 			name = dsemeryc2019;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		A8D4FB50371CAE56A275A313EA5FAB04 /* Pod */ = {
+		7AA38B38374B35DE751AA605F654F62D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8DC1B4022FAB7C8A92A4752841DDA95B /* dsemeryc2019.podspec */,
-				03C71ECA74106652428B70A2615BB3D6 /* LICENSE */,
-				68518FBA412BE4A729E551B2619DE78F /* README.md */,
+				6F7BE8AEEE3ECA23048CB1E39D9ECDBC /* dsemeryc2019 */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		810C1B0FCD1628637AB113630B6BAB5C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				58C02E889A9104F8E04953FB2F60F5F5 /* dsemeryc2019.podspec */,
+				56C9558D68E2020A9D39DF94515DC9A5 /* LICENSE */,
+				FA1971936BF4EE4373196F6547A7E1D8 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		AAE16CA47A435A4A4277E8EAB1403792 /* Development Pods */ = {
+		A449610ED6C44FCD4DDE3ADD9009130E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				804853B728A2CCC7ED1ADF265CB2BA66 /* dsemeryc2019 */,
+				B089C994BC29F29C29E72FA463178A4E /* dsemeryc2019.modulemap */,
+				94DC23ADFD5EAAB44232BF0DB926A7A8 /* dsemeryc2019.xcconfig */,
+				17F7FE5D2AF94C2FA068034143C3E549 /* dsemeryc2019-dummy.m */,
+				C685D2452DC1E26868564A18DA45F606 /* dsemeryc2019-Info.plist */,
+				484D828D5AC26D9C13482DED1A960FF3 /* dsemeryc2019-prefix.pch */,
+				5EEF2274D615F6EEF1C23A4BB1FC9E99 /* dsemeryc2019-umbrella.h */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/dsemeryc2019";
 			sourceTree = "<group>";
 		};
 		B1DFABCB06C7D26FDEE2D845400DA2B9 /* Products */ = {
@@ -226,17 +235,17 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				AAE16CA47A435A4A4277E8EAB1403792 /* Development Pods */,
+				7AA38B38374B35DE751AA605F654F62D /* Development Pods */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				B1DFABCB06C7D26FDEE2D845400DA2B9 /* Products */,
 				3B6626CF1F05F713145C5A65BE29E601 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		EEA31D79F4C7904BE391F889655B691E /* Resources */ = {
+		E2333CC014FC27DA15E44C0FDAF20A1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6030E42D50A0D1CBB65F875442B5F172 /* article.xcdatamodeld */,
+				400C53CBECBDD32DDF9B27DF51375FCC /* article.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -244,11 +253,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1552E98B3149F425AB8BD5778271A67B /* Headers */ = {
+		60416DA6EDBB319D4F44041485A96C06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9265FA93D3DFB3C3F2830E917D71F353 /* dsemeryc2019-umbrella.h in Headers */,
+				15C7015AE3DD5C687CCFA40972073132 /* dsemeryc2019-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,14 +299,14 @@
 			productReference = 5D5AC39CD054E06981A2125D5B6C41ED /* Pods_dsemeryc2019_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		269E773118DC584E2225232E5186BC07 /* dsemeryc2019 */ = {
+		2FB83C087DB3E9CADE3A052D35AE35E0 /* dsemeryc2019 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5502E156C45A8B1421113915442DA86A /* Build configuration list for PBXNativeTarget "dsemeryc2019" */;
+			buildConfigurationList = B472E4A6774C6C309D5F026355DDF120 /* Build configuration list for PBXNativeTarget "dsemeryc2019" */;
 			buildPhases = (
-				1552E98B3149F425AB8BD5778271A67B /* Headers */,
-				07E816BA42D930D15A100CE03FCDD43A /* Sources */,
-				4B37EFE0729A357197C9FD7E287048B5 /* Frameworks */,
-				8AF5DDDB7675932DA5F0FF97C3FA7992 /* Resources */,
+				60416DA6EDBB319D4F44041485A96C06 /* Headers */,
+				EFF8FE1ECEE12CDA19128E1AD59EADE5 /* Sources */,
+				08F740FBF3758DFCED5D9A544D64E116 /* Frameworks */,
+				D60633AF7A11C7B3D2E4F0723D5937AC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -348,7 +357,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				269E773118DC584E2225232E5186BC07 /* dsemeryc2019 */,
+				2FB83C087DB3E9CADE3A052D35AE35E0 /* dsemeryc2019 */,
 				2393E37C252EC445F10B307C12B8EE46 /* Pods-dsemeryc2019_Example */,
 				BFBB87AD371D0559D3A878F24C489D26 /* Pods-dsemeryc2019_Tests */,
 			);
@@ -363,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AF5DDDB7675932DA5F0FF97C3FA7992 /* Resources */ = {
+		D60633AF7A11C7B3D2E4F0723D5937AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,20 +397,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07E816BA42D930D15A100CE03FCDD43A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0D3051378CF4E9F573AA74EE63050ED /* article.xcdatamodeld in Sources */,
-				8187BCD7C675049D2DB5F8A10FF9940B /* dsemeryc2019-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9828F8A1B86CDA0442B1FC70494BE882 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E66223D46300B1C17BEF1BEA36E740AA /* Pods-dsemeryc2019_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFF8FE1ECEE12CDA19128E1AD59EADE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE6643202DF21DB4699411BBCBB89C0 /* Article+CoreDataClass.swift in Sources */,
+				A257C4D17F62EC1D63C9D20445AE0007 /* Article+CoreDataProperties.swift in Sources */,
+				42CA6F751E32DFD3DA6D818AA1D6ABC5 /* article.xcdatamodeld in Sources */,
+				1B3ADFC678B0147B88CF34477327EB3A /* ArticleManager.swift in Sources */,
+				A6A8829C732C8AAADEC5815432F6C1A7 /* dsemeryc2019-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +423,7 @@
 		76AD089B85672C8705D3911F82F910F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = dsemeryc2019;
-			target = 269E773118DC584E2225232E5186BC07 /* dsemeryc2019 */;
+			target = 2FB83C087DB3E9CADE3A052D35AE35E0 /* dsemeryc2019 */;
 			targetProxy = A658747377C9544B1B9CA88D7436E0BF /* PBXContainerItemProxy */;
 		};
 		7BED2254ECBE60A4ABAFD52B50DEB0DD /* PBXTargetDependency */ = {
@@ -490,6 +502,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		52929D24CBA9C12B2AB5BEEC221B33F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94DC23ADFD5EAAB44232BF0DB926A7A8 /* dsemeryc2019.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/dsemeryc2019/dsemeryc2019-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/dsemeryc2019/dsemeryc2019-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/dsemeryc2019/dsemeryc2019.modulemap";
+				PRODUCT_MODULE_NAME = dsemeryc2019;
+				PRODUCT_NAME = dsemeryc2019;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		652089E9180DF58F4E892C236749B082 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -621,9 +664,9 @@
 			};
 			name = Debug;
 		};
-		C93AED64F448DA8FF001F503071FA8D7 /* Release */ = {
+		B063F77737EC7D13E98A8A4F490974DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EDA36F6207DB643868A81803702B190 /* dsemeryc2019.xcconfig */;
+			baseConfigurationReference = 94DC23ADFD5EAAB44232BF0DB926A7A8 /* dsemeryc2019.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -652,37 +695,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		DE6B1A1A1A1E0CCFD03AC7BB5B6AF67A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EDA36F6207DB643868A81803702B190 /* dsemeryc2019.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/dsemeryc2019/dsemeryc2019-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/dsemeryc2019/dsemeryc2019-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/dsemeryc2019/dsemeryc2019.modulemap";
-				PRODUCT_MODULE_NAME = dsemeryc2019;
-				PRODUCT_NAME = dsemeryc2019;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		F232B5ECA11A71BFA199A229B323F454 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -756,11 +768,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5502E156C45A8B1421113915442DA86A /* Build configuration list for PBXNativeTarget "dsemeryc2019" */ = {
+		B472E4A6774C6C309D5F026355DDF120 /* Build configuration list for PBXNativeTarget "dsemeryc2019" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE6B1A1A1A1E0CCFD03AC7BB5B6AF67A /* Debug */,
-				C93AED64F448DA8FF001F503071FA8D7 /* Release */,
+				52929D24CBA9C12B2AB5BEEC221B33F3 /* Debug */,
+				B063F77737EC7D13E98A8A4F490974DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -786,12 +798,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6030E42D50A0D1CBB65F875442B5F172 /* article.xcdatamodeld */ = {
+		400C53CBECBDD32DDF9B27DF51375FCC /* article.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0A57B6A62D4C1D045AADEF1233B143D7 /* article.xcdatamodel */,
+				E7CD56BFA1BEEB2ED227F8E7CCBBC713 /* article.xcdatamodel */,
 			);
-			currentVersion = 0A57B6A62D4C1D045AADEF1233B143D7 /* article.xcdatamodel */;
 			name = article.xcdatamodeld;
 			path = dsemeryc2019/CoreData/article.xcdatamodeld;
 			sourceTree = "<group>";
