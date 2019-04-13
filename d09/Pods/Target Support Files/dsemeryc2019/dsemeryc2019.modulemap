@@ -1,0 +1,6 @@
+framework module dsemeryc2019 {
+  umbrella header "dsemeryc2019-umbrella.h"
+
+  export *
+  module * { export * }
+}

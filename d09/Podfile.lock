@@ -1,0 +1,16 @@
+PODS:
+  - dsemeryc2019 (0.1.0)
+
+DEPENDENCIES:
+  - dsemeryc2019 (from `/Users/dsemeryc/projects/SwiftPiscine/d08/dsemeryc2019`)
+
+EXTERNAL SOURCES:
+  dsemeryc2019:
+    :path: "/Users/dsemeryc/projects/SwiftPiscine/d08/dsemeryc2019"
+
+SPEC CHECKSUMS:
+  dsemeryc2019: 824b46684c7b44e169f4743177156acc7dac21d7
+
+PODFILE CHECKSUM: 2a5a33cf1c12dccf9ca300d499aa148785770455
+
+COCOAPODS: 1.6.1
