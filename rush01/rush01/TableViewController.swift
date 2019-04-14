@@ -35,7 +35,6 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
             self.matchingItems = response.mapItems
             self.tableView.reloadData()
         }
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -69,9 +68,7 @@ extension TableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ResultCellController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCellController
-        for item in matchingItems {
-            cell.textLabel?.text = item.placemark.title!
-        }
+        cell.textLabel?.text = matchingItems[indexPath.row].placemark.title!
         return cell
     }
     
@@ -81,13 +78,13 @@ extension TableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let addStartPoint = UITableViewRowAction(style: .normal, title: "Add start point") {action, index in
-            self.delegate?.currentRout["from"] = self.matchingItems[index.row]
+            self.delegate?.currentRout["from"] = self.matchingItems[indexPath.row]
         }
         let addEndPoint = UITableViewRowAction(style: .normal, title: "Add end point") {action, index in
-            self.delegate?.currentRout["to"] = self.matchingItems[index.row]
+            self.delegate?.currentRout["to"] = self.matchingItems[indexPath.row]
         }
         let showLocation = UITableViewRowAction(style: .normal, title: "Show location") {action, index in
-            self.delegate?.currentLocation = self.matchingItems[index.row].placemark.location
+            self.delegate?.currentLocation = self.matchingItems[indexPath.row].placemark.location
             self.navigationController?.popViewController(animated: true)
         }
         return [addStartPoint, addEndPoint, showLocation]
