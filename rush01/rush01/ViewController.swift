@@ -14,9 +14,13 @@ import CoreLocation
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
-    
-    var currentRout = [String : MKMapItem]()
-    var currentLocation: CLLocation?
+
+    var currentRout = [String : MKMapItem]() {
+        didSet {
+            print(self.currentRout)
+        }
+    }
+    var currentLocation: CLLocation? = nil
     var colors = [UIColor]()
     
     override func viewDidLoad() {
@@ -26,29 +30,28 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 10
         locationManager.startUpdatingLocation()
-        centerUserLocation()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        colors = [.red, .purple, .blue]
+        colors = [.red, .darkGray, .lightGray]
         locationManager.startUpdatingLocation()
         if let startPoint = currentRout["from"], let endPoint = currentRout["to"] {
             chooseType()
-            from.text! += " \(startPoint.placemark.title!)"
-            toPoint.text! += " \(endPoint.placemark.title!)"
+            if let startTitle = startPoint.placemark.title {from.text! += " \(startTitle)"} else {from.text! += " My location"}
+            if let endTitle = endPoint.placemark.title {toPoint.text! += endTitle} else {toPoint.text! += " My Location"}
             routView.isHidden = false
         } else if let startPoint = currentRout["from"] {
             currentLocation = startPoint.placemark.location
-            from.text! += " \(startPoint.placemark.title!)"
+            if let startTitle = startPoint.placemark.title {from.text! += " \(startTitle)"} else {from.text! += " My location"}
             routView.isHidden = false
         } else if let endPoint = currentRout["to"] {
             currentLocation = endPoint.placemark.location
-            toPoint.text! += " \(endPoint.placemark.title!)"
+            if let endTitle = endPoint.placemark.title {toPoint.text! += endTitle} else {toPoint.text! += " My Location"}
             routView.isHidden = false
         } else {
             routView.isHidden = true
         }
-        if (currentLocation != nil) { centerUserLocation() }
+        currentLocation != nil ? centerMapOn(location: currentLocation!.coordinate) : centerUserLocation()
     }
     
     func checkLocationAuth() {
@@ -66,9 +69,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func centerUserLocation() {
         guard ((self.locationManager.location?.coordinate) != nil) else { return }
         let center = CLLocationCoordinate2D(latitude: (self.locationManager.location?.coordinate.latitude)!, longitude: (self.locationManager.location?.coordinate.longitude)!)
-        let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion.init(center: center, span: span)
         self.myMap.setRegion(region, animated: true)
+    }
+    
+    func centerMapOn(location: CLLocationCoordinate2D) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion.init(center: location, span: span)
+        myMap.setRegion(region, animated: true)
     }
     
     func mapViewWillStartLocatingUser(_ mapView: MKMapView) {
@@ -110,8 +119,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             dest.delegate = self
             from.text = "From:"
             toPoint.text = "To:"
+            dest.userLocation = myMap.userLocation
             currentRout.count == 2 ? currentRout.removeAll() : nil
-            print("kek")
         }
     }
     
@@ -122,6 +131,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let cancel = UIAlertAction(title: "Cancel and delete points", style: .cancel) {action in
             self.currentRout.removeAll()
             self.routView.isHidden = true
+            self.clearMap()
         }
         alert.addAction(tryAnotherTransportType)
         alert.addAction(cancel)
@@ -145,9 +155,15 @@ extension ViewController {
     
     private func chooseType() {
         let chosingTransportController = UIAlertController(title: "Transport", message: "Please, choose which transport do you prefer", preferredStyle: .alert)
-        let automobile = UIAlertAction(title: "Automobile", style: .default) {action in self.buildRoute(from: self.currentRout["from"]!, to: self.currentRout["to"]!, type: .automobile)}
-        let byFoot = UIAlertAction(title: "By foot", style: .default) {action in self.buildRoute(from: self.currentRout["from"]!, to: self.currentRout["to"]!, type: .walking)}
-        let transit = UIAlertAction(title: "Transit", style: .default) {action in self.buildRoute(from: self.currentRout["from"]!, to: self.currentRout["to"]!, type: .transit)}
+        let automobile = UIAlertAction(title: "Automobile", style: .default) {action in
+            self.clearMap()
+            self.buildRoute(from: self.currentRout["from"]!, to: self.currentRout["to"]!, type: .automobile)}
+        let byFoot = UIAlertAction(title: "By foot", style: .default) {action in
+            self.clearMap()
+            self.buildRoute(from: self.currentRout["from"]!, to: self.currentRout["to"]!, type: .walking)}
+        let transit = UIAlertAction(title: "Transit", style: .default) {action in
+            self.clearMap()
+            self.buildRoute(from: self.currentRout["from"]!, to: self.currentRout["to"]!, type: .transit)}
         chosingTransportController.addAction(automobile)
         chosingTransportController.addAction(transit)
         chosingTransportController.addAction(byFoot)
@@ -182,4 +198,15 @@ extension ViewController {
         render.lineWidth = 3.0
         return render
     }
+}
+
+//MARK:- Routes Alert (add or delete previos
+
+extension ViewController {
+    
+    func clearMap() {
+        self.myMap.removeAnnotations(self.myMap.annotations)
+        self.myMap.removeOverlays(self.myMap.overlays)
+    }
+    
 }

@@ -13,12 +13,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 
     var matchingItems: [MKMapItem] = []
     var delegate: ViewController?
-    
+    var userLocation: MKUserLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
 
     func updateSearchResultsForSearchController(searchText: String?) {
@@ -33,6 +31,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                 return
             }
             self.matchingItems = response.mapItems
+            self.matchingItems.insert(MKMapItem.forCurrentLocation(), at: 0)
             self.tableView.reloadData()
         }
     }
@@ -54,12 +53,11 @@ extension TableViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.view.endEditing(true)
-        
+        self.delegate?.currentLocation = self.matchingItems[indexPath.item].placemark.location
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,7 +66,13 @@ extension TableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ResultCellController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCellController
-        cell.textLabel?.text = matchingItems[indexPath.row].placemark.title!
+        if indexPath.row == 0 {
+            cell.textLabel?.text = "My Location"
+            cell.textLabel?.textColor = UIColor.red
+        } else {
+            cell.textLabel?.text = matchingItems[indexPath.row].placemark.name
+            cell.detailTextLabel?.text = matchingItems[indexPath.row].placemark.title
+        }
         return cell
     }
     
@@ -78,15 +82,17 @@ extension TableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let addStartPoint = UITableViewRowAction(style: .normal, title: "Add start point") {action, index in
-            self.delegate?.currentRout["from"] = self.matchingItems[indexPath.row]
+            self.delegate?.currentRout["from"] = self.matchingItems[indexPath.item]
+            if let _ = self.delegate?.currentRout["from"], let _ = self.delegate?.currentRout["to"] {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         let addEndPoint = UITableViewRowAction(style: .normal, title: "Add end point") {action, index in
-            self.delegate?.currentRout["to"] = self.matchingItems[indexPath.row]
+            self.delegate?.currentRout["to"] = self.matchingItems[indexPath.item]
+            if let _ = self.delegate?.currentRout["from"], let _ = self.delegate?.currentRout["to"] {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
-        let showLocation = UITableViewRowAction(style: .normal, title: "Show location") {action, index in
-            self.delegate?.currentLocation = self.matchingItems[indexPath.row].placemark.location
-            self.navigationController?.popViewController(animated: true)
-        }
-        return [addStartPoint, addEndPoint, showLocation]
+        return [addStartPoint, addEndPoint]
     }
 }
